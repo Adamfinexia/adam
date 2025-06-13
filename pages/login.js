@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../firebaseConfig';
+import { auth } from '../firebaseConfig'; 
 import { useRouter } from 'next/router';
 
 export default function LoginPage() {
@@ -13,7 +13,7 @@ export default function LoginPage() {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      router.push('/dashboard');
+      router.push('/dashboard'); 
     } catch (err) {
       setError('Błędny e-mail lub hasło.');
     }
