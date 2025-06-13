@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { signInWithEmailAndPassword } from './firebaseConfig';
-import { auth } from '../firebaseConfig';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebaseConfig';
 import { useRouter } from 'next/router';
 
 export default function LoginPage() {
@@ -28,13 +28,15 @@ export default function LoginPage() {
           placeholder="E-mail"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-        /><br /><br />
+        />
+        <br /><br />
         <input
           type="password"
           placeholder="Hasło"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-        /><br /><br />
+        />
+        <br /><br />
         <button type="submit">Zaloguj</button>
       </form>
       {error && <p style={{ color: 'red' }}>{error}</p>}
